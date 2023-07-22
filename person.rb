@@ -1,7 +1,7 @@
 class Person
   attr_accessor :id, :name, :age, :parent_permission
 
-  def initialize(age:, parent_permission: true,name: 'Unknown')
+  def initialize(age:, parent_permission: true, name: 'Unknown')
     @id = rand(1..1000)
     @name = name
     @age = age
