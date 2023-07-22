@@ -3,14 +3,13 @@ require './person'
 class Student < Person
   attr_accessor :classroom
 
-  def initialize(name: "Unknown", classroom:, age:, parent_permission: true)
-   super(name, age, parent_permission)
-   
-   @classroom = classroom
+  def initialize(classroom:, age:, parent_permission: true, name: 'Unknown')
+    super(age, parent_permission, name)
+      @classroom = classroom
   end
 
-  def play_hooky 
-    puts "¯\(ツ)/¯"
+  def play_hooky
+    puts ( "¯\(ツ)/¯" )
   end
   
 end
