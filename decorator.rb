@@ -8,8 +8,8 @@ class Decorator < Nameable
     super()
   end
 
-  def correct_name
-    @nameable.correct_name
+  def correct_name(name)
+    @nameable.correct_name(name)
   end
 end
 
@@ -20,7 +20,8 @@ class CapitalizeDecorator < Decorator
 end
 
 class TrimmerDecorator < Decorator
-  def correct_name(name)
+  def correct_name(name = nil)
+    name ||= @nameable.correct_name
     if name.length > 10
       name[0...10]
     else
