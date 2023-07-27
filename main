@@ -32,7 +32,7 @@ class Main
     results = App.new
     loop do
       choice = menu
-      case choice  # Fixed the issue: use the variable 'choice' instead of calling 'menu' again
+      case choice
       when 1
         results.all_books
       when 2

@@ -1,5 +1,5 @@
 require './person'
-require'./nameable'
+require './nameable'
 require './book'
 require './classroom'
 require './teacher'
@@ -49,7 +49,7 @@ class App
     print 'Name: '
     name = gets.chomp
     print 'Has parent permission? [Y/N]: '
-    parent_permission = gets.chomp.downcase == 'y' ? true : false
+    parent_permission = gets.chomp.downcase == 'y'
 
     each_student = Student.new(age: age, name: name, parent_permission: parent_permission)
     @people << each_student
