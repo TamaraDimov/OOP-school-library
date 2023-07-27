@@ -1,11 +1,10 @@
-#!/usr/bin/env ruby
 require './app'
 
 def main
-  Main.new.run
+  SchoolLibraryApp.new.run
 end
 
-class Main
+class SchoolLibraryApp
   def initialize
     puts 'Welcome to School Library OOP App!'
   end
@@ -22,9 +21,7 @@ class Main
       6 => 'List all rentals for a given person id',
       7 => 'Exit'
     }
-    @list.each do |id, option|
-      puts "#{id}: #{option}"
-    end
+    list.each { |id, option| puts "#{id}: #{option}" }
     gets.chomp.to_i
   end
 
@@ -33,18 +30,12 @@ class Main
     loop do
       choice = menu
       case choice
-      when 1
-        results.all_books
-      when 2
-        results.all_people
-      when 3
-        results.create_person
-      when 4
-        results.create_book
-      when 5
-        results.create_rental
-      when 6
-        results.list_rentals_of_person
+      when 1 then results.all_books
+      when 2 then results.all_people
+      when 3 then results.create_person
+      when 4 then results.create_book
+      when 5 then results.create_rental
+      when 6 then results.list_rentals_of_person
       when 7
         puts 'Thank you for using this app!'
         exit
